@@ -1,0 +1,21 @@
+extends layouts/admin-layout
+
+block title
+     title #{title} | Admin
+
+block content
+    h1= title
+
+    table(class="events-table")
+        thead
+            tr
+                th Event
+                th Actions
+        tbody
+            each event in events
+                tr
+                    td
+                        a(href="/checkin/" + event.id) #{event.name}
+                    td
+                        a(href="/admin/event/" + event.id + "/update" class="il-button il-blue edit-event-link") #[i(class="fa-solid fa-pencil icon" title="Edit Event")]
+                        button(type="button" class="il-button il-orange delete-event-btn" data-id=event.id data-name=event.name) #[i(class="fa-solid fa-trash icon" title="Delete Event")]

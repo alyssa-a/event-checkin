@@ -1,0 +1,28 @@
+extends layouts/admin-layout
+
+block title
+     title #{title} | Admin
+
+block content
+    h1= title
+    
+    if errors
+        ul
+        for error in errors
+            li!= error.msg
+
+    form(action="" method="POST" enctype="multipart/form-data")
+        
+        label(for="name") Event Name
+        input(type="text" id="name" name="name" placeholder="Event Name")
+
+        label(for="short_url") Short URL
+        input(type="text" id="short_url" name="short_url" placeholder="event-name")
+
+        label(for="attendees") Attendees
+        input(type="file" id="attendees" name="attendees" accept=".xls, .xlsx, .csv")
+        p(class="note") #[strong Note:] File should be formatted so the first sheet contains name tag information.
+            br 
+            | Column headers should be: "First", "Last", "Degree1", "Degree2", "Degree3".
+
+        button(type="submit" class="il-button il-orange") Add Event

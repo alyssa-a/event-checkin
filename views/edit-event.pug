@@ -1,0 +1,72 @@
+extends layouts/admin-layout
+
+block title
+     title #{title} | Admin
+
+block content
+    h1= event.name
+
+    form(action="" method="POST")
+        
+        label(for="name") Event Name
+        input(type="text" id="name" name="name" value=event.name)
+
+        label(for="short_url") Short URL
+        input(type="text" id="short_url" name="short_url" value=event.shortUrl)
+
+        button(type="submit" class="il-button") Save Changes
+
+    hr
+
+    div(class="attendee-header")
+        h2 Attendees
+        button(type="button" class="il-button add-attendee-btn") Add Attendee
+
+    table
+        thead
+            tr
+                th First
+                th Last
+                th Degree1
+                th Degree2
+                th Degree3
+                th Actions
+        tbody
+            each attendee in attendees
+                tr
+                    td= attendee.firstName
+                    td= attendee.lastName
+                    td= attendee.degree1
+                    td= attendee.degree2
+                    td= attendee.degree3
+                    td
+                        button(type="button" class="il-button il-blue edit-attendee-btn" data-id=attendee.id data-name=attendee.firstName + " " + attendee.lastName) #[i(class="fa-solid fa-pencil icon" title="Edit Attendee")]
+                        button(type="button" class="il-button il-orange delete-attendee-btn" data-id=attendee.id data-name=attendee.firstName + " " + attendee.lastName) #[i(class="fa-solid fa-trash icon" title="Delete Attendee")]
+    
+    div(id="attendee-modal" class="display-none")
+        button(type="button" class="close-modal-btn" title="Close modal") ⨉
+        
+        h2(class="attendee-modal-title") New Attendee
+
+        form(action="/admin/create-attendee" method="POST" id="attendee-form")
+        
+            label(for="first_name") First Name
+            input(type="text" id="first_name" name="first_name")
+
+            label(for="last_name") Last Name
+            input(type="text" id="last_name" name="last_name")
+
+            label(for="degree1") Degree 1
+            input(type="text" id="degree1" name="degree1")
+
+            label(for="degree2") Degree 2
+            input(type="text" id="degree2" name="degree2")
+
+            label(for="degree3") Degree 3
+            input(type="text" id="degree3" name="degree3")
+
+            input(type="hidden" id="event_id" name="event_id" value=event.id)
+
+            button(type="submit" class="il-button" id="save-attendee-btn") Add Attendee
+
+    div(class="overlay display-none")

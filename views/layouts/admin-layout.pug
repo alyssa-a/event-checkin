@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    block title
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+    link(rel="dns-prefetch" href="https://cdn.toolkit.illinois.edu")
+    link(rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico")
+    link(rel="stylesheet" href="https://cdn.toolkit.illinois.edu/2.15/toolkit.css" media="all")
+    script(src="https://cdn.toolkit.illinois.edu/2.15/toolkit.js")
+    script(src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous")
+    script(src="https://kit.fontawesome.com/f458093ab6.js" crossorigin="anonymous")
+    script(type="text/javascript" src="/scripts/scripts.js")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body
+    il-header
+        div(slot="wordmark")
+            il-unit-wordmark
+                p(class="il-primary-unit")
+                    a(href="https://publicaffairs.illinois.edu/") Strategic Communications and Marketing
+                h1 Event Check-in 
+        il-nav(slot="navigation") 
+            il-nav-link
+                a(href="/") All Events
+            il-nav-section
+                a(href="/admin" slot="label") Admin
+                ul(class="il-subnav")
+                    li #[a(href="/admin") Manage Events]
+                    li #[a(href="/admin/create-event") Create Event]
+    main(class="il-formatted")
+            block content
+    il-footer
+        div(slot="contact" class="il-footer-contact uofi_address")
+            p
+                a(href="https://publicaffairs.illinois.edu/" id="link-1") Strategic Communications and Marketing
+            p 507 E. Green Street | MC-426
+            p Champaign, IL 61820
+            p Phone: 
+                a(href="tel:2173335010") (217) 333-5010
+            p Email: 
+                a(href="mailto:publicaffairs@illinois.edu") publicaffairs@illinois.edu
+        nav(slot="links" class="il-footer-links" aria-label="Legal notices")
+            ul
+                li
+                    button(data-il="cookies")
+                li
+                    a(data-il="privacy")
+                li
+                    a(data-il="copyright")
+                li
+                    a(data-il="accessibility")

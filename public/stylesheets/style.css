@@ -1,0 +1,182 @@
+main {
+  max-width: 1140px;
+  margin: 2rem auto;
+}
+
+main h1 {
+  margin-bottom: 1rem !important;
+}
+
+input,
+label {
+  display: block;
+}
+
+label {
+  font-weight: 700;
+}
+
+input {
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  border: 1px solid var(--il-cloud-3);
+  padding: 8px;
+  width: 300px;
+}
+
+.il-formatted .note {
+  margin-bottom: 1rem;
+}
+
+/* .icon {
+  font-size: 1.3rem;
+  padding: 0 1rem;
+} */
+
+.events-table td {
+  vertical-align: middle;
+}
+
+.edit-event-link,
+.edit-attendee-btn {
+  margin-right: 10px !important;
+}
+
+.delete-form {
+  display: inline-block;
+}
+
+.attendee-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 6000;
+}
+
+#attendee-modal {
+  width: 400px;
+  padding: 1.5rem;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border: 1px solid #ddd;
+  z-index: 7000;
+}
+
+.attendee-modal-title {
+  margin-bottom: 1rem !important;
+  margin-top: 0 !important;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--il-cloud-1);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.close-modal-btn:hover {
+  background: var(--il-gray-2);
+  color: #ffffff;
+}
+
+/* Event check-in page styles */
+
+.event-checkin-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.event-checkin-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-checkin .il-formatted h1 {
+  text-align: center;
+  margin-bottom: 0 !important;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.event-checkin .il-formatted p {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 1.25rem;
+}
+
+#attendee-name {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  width: 500px;
+}
+
+.attendee-list-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.il-formatted #attendee-list {
+  position: absolute;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 0;
+  background: #FFFFFF;
+  -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.2);
+}
+
+.il-formatted .attendee-list-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #D2D2D2;
+  font-size: 1.25rem;
+}
+
+.il-formatted .attendee-list-item:last-child {
+  border-bottom: none;
+}
+
+.il-formatted .checkin-btn {
+  display: block !important;
+  margin: 0 auto;
+}
+
+.closed {
+  visibility: hidden;
+}
+
+.display-none {
+  display: none;
+}

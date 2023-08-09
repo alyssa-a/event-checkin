@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title #{title} | Check-in
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css")
+    link(rel="dns-prefetch" href="https://cdn.toolkit.illinois.edu")
+    link(rel="icon" href="https://cdn.brand.illinois.edu/favicon.ico")
+    link(rel="stylesheet" href="https://cdn.toolkit.illinois.edu/2.15/toolkit.css" media="all")
+    script(src="https://cdn.toolkit.illinois.edu/2.15/toolkit.js")
+    script(src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous")
+    script(src="https://kit.fontawesome.com/f458093ab6.js" crossorigin="anonymous")
+    script(type="text/javascript" src="/scripts/scripts.js")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body(class="event-checkin" data-event-id=eventId)
+    header(class="event-checkin-header")
+      img(src="/images/University-Wordmark-Full-Color-RGB.png" width="200px" alt="University of Illinois Urbana-Champaign")
+    
+    main(class="il-formatted event-checkin-main")
+        h1 Welcome
+        p Please check in to print your event badge.
+        block content

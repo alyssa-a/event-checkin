@@ -1,0 +1,14 @@
+extends layouts/checkin-layout
+
+block content
+    form(autocomplete="off" action="")
+        
+        div(aria-label="Name" role="combobox" aria-expanded="false" aria-owns="attendee-list" aria-haspopup="listbox")
+            input(type="text" id="attendee-name" aria-autocomplete="list" aria-controls="attendee-list" placeholder="Your Name")
+        
+        div(class="attendee-list-container")
+            ul(role="listbox" id="attendee-list" class="closed")
+                each attendee in attendees
+                    li(class="attendee-list-item" role="option" data-id=attendee.id)= attendee.firstName + " " + attendee.lastName
+        
+        input(type="sumbit" value="Check In" class="il-button il-orange checkin-btn")

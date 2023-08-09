@@ -1,0 +1,10 @@
+extends layouts/admin-layout
+
+block title
+     title #{title}
+
+block content
+    h1= title
+    ul
+        each event in events
+            li #[a(href="/checkin/" + event.id) #{event.name}]
